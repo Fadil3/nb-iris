@@ -16,7 +16,7 @@
   <body style="margin: 5vw">
     <h1>Klasifikasi data Iris:</h1>
 
-    <form action="/predict" method="post">
+    <form action="{{ url_for('predict') }}" method="post">
       <label for="sepal_length">sepal_length</label>
       <input
         type="text"
@@ -50,37 +50,34 @@
       />
 
       <button type="submit">KLASIFIKASI IRIS</button>
+      <a class="btn btn-warning" href="/">Reset</a>
     </form>
 
     <section>
       <div>
-        <table class="table table-striped">
-          <tbody>
-            <tr>
-              <td>sepal_length:</td>
-              <td>123.0</td>
-            </tr>
-            <tr>
-              <td>sepal_width:</td>
-              <td>sepal_width: 123.0</td>
-            </tr>
-            <tr>
-              <td>petal_length:</td>
-              <td>petal_length: 131.0</td>
-            </tr>
-            <tr>
-              <td>petal_width:</td>
-              <td>petal_width: 3123.0</td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- <p>sepal_length: 123.0 </p>
-                    <p>sepal_width: 123.0</p>
-                    <p>petal_length: 131.0</p>
-                    <p>petal_width: 3123.0</p> -->
         <div>
           <h1>Hasil klasifikasi data iris adalah</h1>
-          <h2>versicolor</h2>
+          <h2>{{ hasil }}</h2>
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <td>sepal_length:</td>
+                <td>{{ sepal_length }}</td>
+              </tr>
+              <tr>
+                <td>sepal_width:</td>
+                <td>{{ sepal_width }}</td>
+              </tr>
+              <tr>
+                <td>petal_length:</td>
+                <td>{{ petal_length }}</td>
+              </tr>
+              <tr>
+                <td>petal_width:</td>
+                <td>{{ petal_width }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
