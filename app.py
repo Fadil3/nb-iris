@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np 
 
 app = Flask(__name__)
+port = int(os.environ.get('PORT', 33507))
 
 model_file = open('modeliris.pkl', 'rb')
 model = pickle.load(model_file, encoding='bytes')
@@ -44,4 +45,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=33507)
